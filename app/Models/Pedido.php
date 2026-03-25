@@ -8,7 +8,7 @@ class Pedido extends Model
 {
     protected $guarded = [];
 
-    public function cliente() // ✅ singular e minúsculo
+    public function cliente() 
     {
         return $this->belongsTo(Cliente::class);
     }
