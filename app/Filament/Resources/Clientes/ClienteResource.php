@@ -35,9 +35,7 @@ class ClienteResource extends Resource
                 TextInput::make('nome')->required()->label('nome'),
                 TextInput::make('email')->email()->label('email'),
                 TextInput::make('telefone')->label('telefone')->mask('(99) 99999-9999'),
-                TextInput::make('endereco')->label('endereco')->mask(RawJs::make(<<<'JS'
-                $input.legth > 14 ? '99999-9999' : '99999-999'
-                JS)),
+                TextInput::make('endereco')->label('endereco'),
             ]);
     }
 
