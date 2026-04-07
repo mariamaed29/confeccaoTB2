@@ -9,16 +9,30 @@ use App\Filament\Resources\Roles\Pages\ViewRole;
 use App\Filament\Resources\Roles\Schemas\RoleForm;
 use App\Filament\Resources\Roles\Schemas\RoleInfolist;
 use App\Filament\Resources\Roles\Tables\RolesTable;
-use App\Models\Role;
+use Spatie\Permission\Models\Role;
+use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 
 class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
+
+public static function canAccess(): bool
+{
+    $user = Auth::user();
+
+    if (! $user instanceof User) {
+        return false;
+    }
+
+    return $user->hasRole('Estoque')
+        && $user->can('Admin');
+}
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
@@ -26,7 +40,21 @@ class RoleResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return RoleForm::configure($schema);
+        return $schema
+        ->schema([
+            \Filament\Forms\Components\TextInput::make('name')
+                ->label('Cargo')
+                ->required()
+                ->unique(ignoreRecord: true)
+                ->maxLength(255)
+                ->columnSpanFull(),
+
+            \Filament\Forms\Components\Select::make('permissions')
+                ->label('Permissões de acesso')
+                ->multiple()
+                ->relationship('permissions', 'name')
+                ->columnSpanFull(),
+        ]);
     }
 
     public static function infolist(Schema $schema): Schema
