@@ -1,0 +1,413 @@
+@import url('/css/filament/filament/app.css');
+
+:root {
+    --tb-linen: oklch(0.965 0.015 65.0);
+    --tb-sand: oklch(0.920 0.035 65.0);
+    --tb-tan: oklch(0.840 0.060 65.0);
+    --tb-camel: oklch(0.640 0.110 55.0);
+    --tb-brown: oklch(0.530 0.120 50.0);
+    --tb-coffee: oklch(0.260 0.075 45.0);
+    --tb-espresso: oklch(0.190 0.055 45.0);
+}
+
+.fi-body {
+    background:
+        radial-gradient(circle at top left, color-mix(in oklch, var(--tb-camel) 18%, transparent), transparent 32rem),
+        radial-gradient(circle at bottom right, color-mix(in oklch, var(--tb-sand) 52%, transparent), transparent 30rem),
+        linear-gradient(135deg, var(--tb-linen), color-mix(in oklch, var(--tb-linen) 84%, var(--tb-sand)));
+    color: var(--tb-espresso);
+}
+
+.fi-sidebar {
+    background: linear-gradient(180deg, color-mix(in oklch, var(--tb-linen) 94%, white), color-mix(in oklch, var(--tb-linen) 78%, var(--tb-sand)));
+    border-right: 1px solid color-mix(in oklch, var(--tb-tan) 46%, transparent);
+    box-shadow: 20px 0 55px color-mix(in oklch, var(--tb-coffee) 12%, transparent);
+}
+
+.fi-sidebar-header {
+    background: transparent;
+    border-bottom: 1px solid color-mix(in oklch, var(--tb-tan) 42%, transparent);
+}
+
+.fi-logo {
+    color: var(--tb-espresso);
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.fi-sidebar-nav {
+    padding-inline: 0.75rem;
+}
+
+.fi-sidebar-nav-groups {
+    gap: 0.65rem;
+}
+
+.fi-sidebar-group-label {
+    color: color-mix(in oklch, var(--tb-coffee) 78%, black);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.fi-sidebar-item-button {
+    border-radius: 0.45rem;
+    color: color-mix(in oklch, var(--tb-espresso) 90%, black);
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.fi-sidebar-item-button:hover,
+.fi-sidebar-item-active > .fi-sidebar-item-button {
+    background: color-mix(in oklch, var(--tb-camel) 18%, transparent);
+    color: var(--tb-espresso);
+}
+
+.fi-sidebar-item-button:hover {
+    transform: translateX(2px);
+}
+
+.fi-topbar > nav {
+    background: color-mix(in oklch, var(--tb-linen) 90%, white);
+    border-bottom: 1px solid color-mix(in oklch, var(--tb-tan) 46%, transparent);
+    box-shadow: 0 12px 34px color-mix(in oklch, var(--tb-coffee) 10%, transparent);
+}
+
+.fi-main {
+    padding-top: 1.25rem;
+}
+
+.fi-page-header-heading {
+    color: var(--tb-espresso);
+    font-weight: 800;
+}
+
+.fi-section,
+.fi-ta-ctn,
+.fi-infolist,
+.fi-form {
+    border-radius: 0.5rem;
+    border-color: color-mix(in oklch, var(--tb-tan) 42%, transparent);
+    background: color-mix(in oklch, var(--tb-linen) 88%, white);
+    box-shadow: 0 18px 48px color-mix(in oklch, var(--tb-coffee) 10%, transparent);
+    color: var(--tb-espresso);
+}
+
+.fi-ta-header,
+.fi-section-header {
+    background: color-mix(in oklch, var(--tb-linen) 76%, var(--tb-sand));
+}
+
+.fi-ta-row:hover {
+    background: color-mix(in oklch, var(--tb-sand) 44%, transparent);
+}
+
+.fi-btn,
+.fi-input-wrp,
+.fi-select-input,
+.fi-textarea {
+    border-radius: 0.45rem;
+}
+
+.fi-btn {
+    font-weight: 700;
+}
+
+.fi-input-wrp:focus-within {
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--tb-camel) 22%, transparent);
+}
+
+.fi-simple-layout {
+    background:
+        radial-gradient(circle at 20% 20%, color-mix(in oklch, var(--tb-camel) 20%, transparent), transparent 24rem),
+        linear-gradient(135deg, var(--tb-linen), color-mix(in oklch, var(--tb-linen) 78%, var(--tb-sand)));
+}
+
+.fi-simple-main {
+    border-radius: 0.5rem;
+    border: 1px solid color-mix(in oklch, var(--tb-tan) 46%, transparent);
+    background: color-mix(in oklch, var(--tb-linen) 88%, white);
+    box-shadow: 0 24px 60px color-mix(in oklch, var(--tb-coffee) 14%, transparent);
+}
+
+.fi-topbar,
+.fi-main,
+.fi-page,
+.fi-section-content,
+.fi-ta-table,
+.fi-ta-cell,
+.fi-in-text,
+.fi-fo-field-wrp-label,
+.fi-fieldset,
+.fi-placeholder {
+    color: color-mix(in oklch, var(--tb-espresso) 92%, black);
+}
+
+.fi-ta-header-cell,
+.fi-ta-text,
+.fi-breadcrumbs-item-label,
+.fi-page-subheading,
+.fi-section-header-description {
+    color: color-mix(in oklch, var(--tb-coffee) 86%, black);
+}
+
+.fi-input-wrp,
+.fi-select-input,
+.fi-textarea {
+    background: color-mix(in oklch, var(--tb-linen) 84%, white);
+    border-color: color-mix(in oklch, var(--tb-tan) 48%, transparent);
+    color: var(--tb-espresso);
+}
+
+.fi-input,
+.fi-select-input,
+.fi-textarea {
+    color: var(--tb-espresso);
+}
+
+.fi-input::placeholder,
+.fi-textarea::placeholder {
+    color: color-mix(in oklch, var(--tb-coffee) 58%, transparent);
+}
+
+.fi-dropdown-panel,
+.fi-modal-window {
+    background: color-mix(in oklch, var(--tb-linen) 90%, white);
+    border-color: color-mix(in oklch, var(--tb-tan) 44%, transparent);
+    color: var(--tb-espresso);
+}
+
+.tb-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.tb-dashboard-hero,
+.tb-dashboard-panel {
+    border: 1px solid color-mix(in oklch, var(--tb-tan) 42%, transparent);
+    border-radius: 0.5rem;
+    box-shadow: 0 18px 48px color-mix(in oklch, var(--tb-coffee) 10%, transparent);
+}
+
+.tb-dashboard-hero {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.4rem;
+    background:
+        radial-gradient(circle at 80% 20%, color-mix(in oklch, var(--tb-camel) 24%, transparent), transparent 18rem),
+        linear-gradient(135deg, color-mix(in oklch, var(--tb-linen) 88%, white), color-mix(in oklch, var(--tb-sand) 82%, var(--tb-linen)));
+}
+
+.tb-dashboard-hero h2,
+.tb-dashboard-panel h3 {
+    margin: 0;
+    color: var(--tb-espresso);
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.tb-dashboard-hero h2 {
+    max-width: 42rem;
+    font-size: clamp(1.45rem, 2vw, 2.2rem);
+    line-height: 1.08;
+}
+
+.tb-dashboard-hero p:not(.tb-dashboard-kicker) {
+    max-width: 46rem;
+    margin-top: 0.6rem;
+    color: color-mix(in oklch, var(--tb-coffee) 88%, black);
+}
+
+.tb-dashboard-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+}
+
+.tb-dashboard-actions a,
+.tb-dashboard-panel-header a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.35rem;
+    border-radius: 0.45rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.tb-dashboard-actions a {
+    padding-inline: 0.9rem;
+    background: var(--tb-espresso);
+    color: var(--tb-linen);
+    box-shadow: 0 10px 22px color-mix(in oklch, var(--tb-coffee) 18%, transparent);
+}
+
+.tb-dashboard-actions a:nth-child(2),
+.tb-dashboard-actions a:nth-child(3) {
+    background: color-mix(in oklch, var(--tb-camel) 88%, var(--tb-brown));
+}
+
+.tb-dashboard-actions a:hover,
+.tb-dashboard-panel-header a:hover,
+.tb-dashboard-list-item:hover {
+    transform: translateY(-1px);
+}
+
+.tb-dashboard-panel {
+    grid-column: span 4;
+    min-height: 100%;
+    padding: 1rem;
+    background: color-mix(in oklch, var(--tb-linen) 90%, white);
+}
+
+.tb-dashboard-orders {
+    grid-column: span 6;
+}
+
+.tb-dashboard-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+}
+
+.tb-dashboard-panel-header a {
+    padding-inline: 0.75rem;
+    background: color-mix(in oklch, var(--tb-sand) 74%, white);
+    color: var(--tb-espresso);
+}
+
+.tb-dashboard-kicker {
+    margin: 0 0 0.25rem;
+    color: var(--tb-brown);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.tb-dashboard-list {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.tb-dashboard-list-item,
+.tb-dashboard-status div,
+.tb-dashboard-empty {
+    border: 1px solid color-mix(in oklch, var(--tb-tan) 34%, transparent);
+    border-radius: 0.45rem;
+    background: color-mix(in oklch, white 70%, var(--tb-linen));
+}
+
+.tb-dashboard-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem;
+    color: var(--tb-espresso);
+    text-decoration: none;
+    transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.tb-dashboard-list-item:hover {
+    border-color: color-mix(in oklch, var(--tb-camel) 58%, transparent);
+    background: color-mix(in oklch, var(--tb-sand) 52%, white);
+}
+
+.tb-dashboard-list-item span {
+    min-width: 0;
+}
+
+.tb-dashboard-list-item strong,
+.tb-dashboard-list-item small {
+    display: block;
+}
+
+.tb-dashboard-list-item strong {
+    overflow: hidden;
+    color: var(--tb-espresso);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tb-dashboard-list-item small {
+    margin-top: 0.18rem;
+    color: color-mix(in oklch, var(--tb-coffee) 76%, black);
+}
+
+.tb-dashboard-list-item b {
+    flex: none;
+    color: var(--tb-brown);
+}
+
+.tb-dashboard-status {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.tb-dashboard-status div {
+    padding: 0.85rem;
+}
+
+.tb-dashboard-status span,
+.tb-dashboard-status strong {
+    display: block;
+}
+
+.tb-dashboard-status span {
+    color: color-mix(in oklch, var(--tb-coffee) 76%, black);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.tb-dashboard-status strong {
+    margin-top: 0.2rem;
+    color: var(--tb-espresso);
+    font-size: 1.65rem;
+    line-height: 1;
+}
+
+.tb-dashboard-empty {
+    padding: 0.85rem;
+    color: color-mix(in oklch, var(--tb-coffee) 78%, black);
+}
+
+@media (max-width: 1100px) {
+    .tb-dashboard-panel,
+    .tb-dashboard-orders {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 760px) {
+    .tb-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tb-dashboard-hero,
+    .tb-dashboard-panel,
+    .tb-dashboard-orders {
+        grid-column: 1;
+    }
+
+    .tb-dashboard-hero {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tb-dashboard-actions {
+        justify-content: flex-start;
+    }
+
+    .tb-dashboard-actions a {
+        flex: 1 1 10rem;
+    }
+}
